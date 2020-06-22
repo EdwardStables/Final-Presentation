@@ -9,10 +9,10 @@
 
 <script>
 document.getElementById("inp_button").onclick = function (){
-    ws.send("path")
+	ws.send(JSON.stringify({type:"path",inp: JSON.parse("[" + document.getElementById("vector_input").value + "]")}))
 }
 document.getElementById("load_button").onclick = function (){
-    ws.send("surface")
+    ws.send(JSON.stringify({type:"surface"}))
 }
 </script>
 <div id="tester" style="width:600px;height:250px;"></div>

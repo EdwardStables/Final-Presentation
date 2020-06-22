@@ -44,9 +44,12 @@ function path_plotter(path){
 
 	console.log(x_points)
     data = {
-               mode: 'markers',
+               mode: 'line',
+			   line:{
+			        width: 6	
+			   },
                marker:{
-                    size: 12,
+                    size: 8,
                     line: {
 						color: 'rgba(217, 217, 217, 0.14)',
 						width: 0.5

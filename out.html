@@ -1688,9 +1688,12 @@ function path_plotter(path){
 
 	console.log(x_points)
     data = {
-               mode: 'markers',
+               mode: 'line',
+			   line:{
+			        width: 6	
+			   },
                marker:{
-                    size: 12,
+                    size: 8,
                     line: {
 						color: 'rgba(217, 217, 217, 0.14)',
 						width: 0.5
@@ -1771,10 +1774,10 @@ function surface_plotter(surface){
 <button type="button" id="load_button">Load Graph </button></p>
 <script>
 document.getElementById("inp_button").onclick = function (){
-    ws.send("path")
+    ws.send(JSON.stringify({type:"path",inp: JSON.parse("[" + document.getElementById("vector_input").value + "]")}))
 }
 document.getElementById("load_button").onclick = function (){
-    ws.send("surface")
+    ws.send(JSON.stringify({type:"surface"}))
 }
 </script>
 
